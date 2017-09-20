@@ -1,8 +1,7 @@
 # fileshare Plugin for DokuWiki
-Dokuwiki-Plugin: Use a directory on you (web) server as file container
+Dokuwiki-Plugin: Use a directory on your (web) server as file container.
 
-
-Share, plublish files via web server.
+Share, plublish files via web server (with dokuwiki).
 
 All documentation for this plugin can be found athttps://www.dokuwiki.org/plugin:fileshare
 
