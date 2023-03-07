@@ -1,7 +1,7 @@
 base   fileshare
 author Soft2C.de
 email  info@soft2c.de
-date   2017-09-20
+date   2023-03-06
 name   fileshare plugin
 desc   upload, show and download files from directory on web server
 url    http://www.soft2c.de

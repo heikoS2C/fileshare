@@ -77,7 +77,8 @@ class syntax_plugin_fileshare_Fileshare extends DokuWiki_Syntax_Plugin {
      * @return bool If rendering was successful.
      */
     public function render($mode, Doku_Renderer $renderer, $data) {
-    	if ($_FILES ['upload'] ['tmp_name']) {
+    	//if ($_FILES ['upload'] ['tmp_name']) {    	
+    	if(isset($_FILES['upload']) ){
     		$dir = $_POST ['ns'];
     		$tmp_name = $_FILES ['upload'] ['tmp_name'];
     		// basename() kann Directory-Traversal-Angriffe verhindern;
@@ -162,10 +163,10 @@ class syntax_plugin_fileshare_Fileshare extends DokuWiki_Syntax_Plugin {
     private function readFileList($dir, $delete) {
     	$refreshbutton = $this->getLang ( 'refreshbutton' );
     	$loeschenbutton = $this->getLang ( 'loeschenbutton' );
-    	
+    	$html ='';
     	$html .= '<div style="padding:4px 8px 4px 8px;">';
     	$html .= '<form action="' . $_SERVER ['PHP_SELF'] . '" method="GET" name="filesharelist" id="filesharelist">';
-    	$html .= '<input type="hidden" name="id" value="' . $_REQUEST[id]. '" />';
+    	$html .= '<input type="hidden" name="id_" value="' . $_REQUEST['id']. '" />';
     	if($this->isAuthorized('role_delete')){
 	    	$html .= '<button style="float:left" name="action" value="DELETE" type="submit"> ' . $loeschenbutton . ' </button>';
 	    	$html .= '<button style="float:left" name="action" value="REFRESH" type="submit"> ' . $refreshbutton . ' </button>';
